@@ -14,6 +14,15 @@ import Cart from './components/Cart'
 import My from './components/My'
 
 import Detail from './components/Detail'
+
+
+
+
+
+
+
+
+
 //配置路由及二级路由
 const BasicExample = () => (
   <Router>
@@ -23,7 +32,7 @@ const BasicExample = () => (
 		      <Route path="/orders" component={Orders}/>
 		      <Route path="/cart" component={Cart}/>
 		      <Route path="/my" component={My}/>
-          <Route path="/detail/:id" component={Detail}/> 
+          <Route path="/detail/:id" component={Detail}/>
          
     </div>
   </Router>

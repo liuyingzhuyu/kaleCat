@@ -1,12 +1,9 @@
-import HomeReaducer from './HomeReaducer'
-
-import OrdersReaducer from './OrdersReaducer'
 
 
+import GoodsListReaducer from './GoodsListReaducer'
 
 export default {
-	home_list:HomeReaducer,
-	Orders_list:OrdersReaducer
+	goodsList: GoodsListReaducer
 }
 
 

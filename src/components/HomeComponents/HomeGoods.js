@@ -2,71 +2,163 @@ import React from 'react'
 import fecthDate from '../../fetch/fetch'
 
 import { Card } from 'antd';
+import { Link} from 'react-router-dom' 
+import { connect } from 'react-redux'
 
- class HomeGoods extends React.Component{
- 	constructor(){
- 		super()
- 		this.state={
- 			
- 		}
- 	
- 		
- 	}
+
+//设置数据库并获取数据
+   class HomeGoodsUI extends React.Component{
+//  constructor(){
+//  	super()
+//
+//  }
 	render(){
+		 console.log(this,"aaaaaaaaaaaaaaaaaa")
+     
 		return(
-		    <div className='goods'>
+			  <div className='goods'>
 		          <h2>— 热卖商品—</h2>
-		         <section className='list'>
-		             <Card >
-					    <div className="custom-image">
-					      <img alt="example" width="100%" src="http://kalemao.img-cn-hangzhou.aliyuncs.com/idc/5391504085911347.jpg" />
-					    </div>
-					    <div className="custom-card">
-					      <span className="name">[REMAX/乐速]苹果数据线充电线（白色）</span>
-					      <p><span className="price">￥9.90</span><span className="sale-num">已售:127</span></p>
-					    </div>
-					  </Card> 
-		            <Card >
-					    <div className="custom-image">
-					      <img alt="example" width="100%" src="http://kalemao.img-cn-hangzhou.aliyuncs.com/idc/8071504260079915.jpg" />
-					    </div>
-					    <div className="custom-card">
-					      <span className="name">[REMAX/乐速]苹果数据线充电线（白色）</span>
-					      <p><span className="price">￥9.90</span><span className="sale-num">已售:127</span></p>
-					    </div>
-					  </Card> 
-		             <Card >
-					    <div className="custom-image">
-					      <img alt="example" width="100%" src="http://kalemao.img-cn-hangzhou.aliyuncs.com/idc/9701502939455220.jpg" />
-					    </div>
-					    <div className="custom-card">
-					       <span className="name">[REMAX/乐速]苹果数据线充电线（白色）</span>
-					      <p><span className="price">￥9.90</span><span className="sale-num">已售:127</span></p>
-					    </div>
-					  </Card> 
+		            <section className='list'>
+		              	  {
+						            	this.props.goodsList.map((item,index)=>{
+						            		 return(
+						            		 	 <Link to={'/detail/'+item.goodsName} key={item.goodsName + index} className="toDetail">
+											             <Card >
+																	    <div className="custom-image">
+																	      <img alt="example" width="100%" src={item.goodsPic[0]} />
+																	    </div>
+																	    <div className="custom-card">
+																	      <span className="name">{item.goodsName}</span>
+																	      <p><span className="price">￥{item.goodsPrice}</span><span className="sale-num">已售:{item.goodsSale}</span></p>
+																	    </div>
+																	  </Card> 
+											        </Link>
+						            		
+						            		 )
+						            	})
+						          } 
+		          
 		         </section>
-		         
-		    
-		     
+		      
 		    </div>
 		)
 	}
+	
 
 	
-	componentDidMount(){
-	}
-	componentDidUpdate(){
+	componentWillMount(){
 		
+   	this.props.fetchGoodsList()
+}
+}
+const mapStateToProps=(state)=>{  //把state的值赋给props
+   console.log(state,"ooooooooooo")
+	return {
+		goodsList: state.goodsList
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }
 
 
+const mapDispatchToProps=(dispatch)=>{ //把dispatch的值赋给props
+	return {
+		fetchGoodsList:()=>{
+
+					//获取商品列表数据
+						 fecthDate('/api/list',function(data){
+						 	console.log(data,"8888888888888888888")
+					  	dispatch({
+								type:"GOODLIST",
+								payload:data
+							})
+					  })
+			
+		}
+	}
+
+}
+
+//容器组件
+const HomeGoods=connect(mapStateToProps,mapDispatchToProps)(HomeGoodsUI)
+
 export default HomeGoods   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// class HomeGoods extends React.Component{
+// 	constructor(){
+// 		super()
+// 		this.state={
+// 			goodsList:[]
+// 		}
+// 	}
+//
+//	render(){	
+//		return(
+//		    <div className='goods'>
+//		          <h2>— 热卖商品—</h2>
+//		         <section className='list'>
+//		              	   {
+//						            	this.state.goodsList.map((item,index)=>{
+//						            		 return(
+//						            		 	 <Link to={'/detail/'+item.goodsName} key={item.goodsName + index} className="toDetail">
+//											             <Card >
+//																	    <div className="custom-image">
+//																	      <img alt="example" width="100%" src={item.goodsPic[0]} />
+//																	    </div>
+//																	    <div className="custom-card">
+//																	      <span className="name">{item.goodsName}</span>
+//																	      <p><span className="price">￥{item.goodsPrice}</span><span className="sale-num">已售:{item.goodsSale}</span></p>
+//																	    </div>
+//																	  </Card> 
+//											        </Link>
+//						            		
+//						            		 )
+//						            	})
+//						          } 
+//		          
+//		         </section>
+//		         
+//		    
+//		     
+//		    </div>
+//		)
+//	}
+//
+//	
+//	componentDidMount(){
+//		var that=this
+//		//获取商品列表数据
+//			 fecthDate('/0914project/kaleCat/src/static/json/homeGoods.json',function(data){
+//		  	that.setState({
+//					goodsList:data
+//				})
+//		  })
+//		
+//		
+//		
+//	}
+//	componentDidUpdate(){
+//		
+//	}
+//	
+//}
+//
+//
+//export default HomeGoods   

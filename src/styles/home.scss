@@ -121,9 +121,14 @@
              width: 100%;
              display: flex;
              flex-wrap: wrap;
+             .toDetail{
+                 display: block;
+                 width: 50%;
+                 color: #666;
+             }
            .ant-card{
-               width: 50%;
-//             padding: 15px;
+               width: 100%;
+              
            }
            .ant-card-body{
                padding: 15px; 
@@ -131,7 +136,16 @@
            .ant-card-bordered{
                border: none;
            }
+           .custom-image img{
+               width: 100%;
+               height: 8rem;
+           }
            .custom-card{
+                 .name{
+                      display: block;
+                      
+                      height:1.5rem;
+                 } 
                    font-family: "Microsoft YaHei", "Arial", "sans-serif";
                  p{
                      margin-top: 10px;

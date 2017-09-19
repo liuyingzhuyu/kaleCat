@@ -75,10 +75,7 @@ import fecthDate from '../../fetch/fetch'
 			 
 			 </a >
 
-			
-			
-			
-			
+		
 			</header>
 		)
 	}
@@ -108,21 +105,22 @@ import fecthDate from '../../fetch/fetch'
 		        grabCursor: true,
 		        autoplay : 3000,
 		  });
-		  console.log(this.headerSwiper)
+//		  console.log(this.headerSwiper)
 		  var that=this
 		  //获取轮播图
-		 fecthDate('/0914project/kaleCat/src/static/json/homeSwiper.json',function(data){
+		 fecthDate('api/swiper',function(data){
+//		 	console.log(data,"888888888888888888888888")
 		  	that.setState({
 					swiperList:data
 				})
 		  })
 		  
 		 //获取vip页面
-		fecthDate('/0914project/kaleCat/src/static/json/homeVip.json',function(data){
-		  	that.setState({
-					vipList:data
-				})
-		  })
+//		fecthDate('/0914project/kaleCat/src/static/json/homeVip.json',function(data){
+//		  	that.setState({
+//					vipList:data
+//				})
+//		  })
 		
 	}
 	

@@ -30,7 +30,7 @@ class NavUI extends React.Component{
 						    </Link>
 						     <Link className={"tab-item external "+this.changeColor('/cart')}  to="/cart" >
 						         <span className="icon iconfont icon-gouwuche"></span>
-						        <span className="tab-label">购物车</span>
+						         <span className="tab-label">购物车</span>
 						    </Link>
 						    
 						     <Link className={"tab-item external "+this.changeColor('/my')} to="/my">

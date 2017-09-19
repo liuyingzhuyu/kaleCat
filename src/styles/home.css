@@ -85,14 +85,24 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap; }
+      .home .goods section.list .toDetail {
+        display: block;
+        width: 50%;
+        color: #666; }
       .home .goods section.list .ant-card {
-        width: 50%; }
+        width: 100%; }
       .home .goods section.list .ant-card-body {
         padding: 15px; }
       .home .goods section.list .ant-card-bordered {
         border: none; }
+      .home .goods section.list .custom-image img {
+        width: 100%;
+        height: 8rem; }
       .home .goods section.list .custom-card {
         font-family: "Microsoft YaHei", "Arial", "sans-serif"; }
+        .home .goods section.list .custom-card .name {
+          display: block;
+          height: 1.5rem; }
         .home .goods section.list .custom-card p {
           margin-top: 10px;
           clear: all; }

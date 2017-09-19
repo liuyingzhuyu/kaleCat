@@ -19,19 +19,26 @@ import './static/iconfont/iconfont.js'
 // 引入编译完的 css
 import './App.css'
 import './styles/home.css'
+import './styles/datail.css'
+
+
 
 //结合reducer
 const reducers =combineReducers(reducersObj)
+
 
 //创建store
 const store =createStore(reducers)
 
 
-
   
 //渲染页面的函数
 const renderPage=()=>{
-	ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
+	ReactDOM.render(
+	    <Provider store={store}>
+		    <App />
+	    </Provider >
+	      , document.getElementById('root'));
 }
 
 renderPage()
