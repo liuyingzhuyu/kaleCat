@@ -21,7 +21,7 @@ import './App.css'
 import './styles/home.scss'
 import './styles/datail.scss'
 import './styles/evaluate.scss'
-
+import './styles/classify.scss'
 
 //结合reducer
 const reducers =combineReducers(reducersObj)

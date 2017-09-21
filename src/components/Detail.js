@@ -1,9 +1,9 @@
 import React from 'react'
 import { Icon,Button  } from 'antd';
-import fecthDate from '../fetch/fetch'
+//import fecthDate from '../fetch/fetch'
 import { Link} from 'react-router-dom' 
 import { connect } from 'react-redux'
-
+import LazyLoad,{ lazyload } from 'react-lazyload';
 class DetailUI extends React.Component {
 
 	constructor() {
@@ -97,7 +97,9 @@ class DetailUI extends React.Component {
 			       	  goods.detail.map((item,index)=>{
 			       	  	return(
 			       	  		<p key={"adfasf"+index}>
-						        <img alt="" src={item} />
+			       	  		   <LazyLoad height={200} offset={300} scroll={true}>
+						        <img alt="example" src={item} />
+						        </LazyLoad>
 						    </p>
 			       	  	)
 			       	  })	
@@ -141,17 +143,7 @@ const mapStateToProps = (state) => { //把state的值赋给props
 }
 const mapDispatchToProps = (dispatch) => { //把dispatch的值赋给props
 	return {
-		//		fetchGoodsList:()=>{
-		//
-		//					//获取商品列表数据
-		//						 fecthDate('/0914project/kaleCat/src/static/json/homeGoods.json',function(data){
-		//					  	dispatch({
-		//								type:"GOODLIST",
-		//								payload:data
-		//							})
-		//					  })
-		//			
-		//		}
+		
 	}
 
 }

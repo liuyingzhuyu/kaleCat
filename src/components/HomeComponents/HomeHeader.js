@@ -1,7 +1,7 @@
 import React from 'react'
 import fecthDate from '../../fetch/fetch'
 
-
+import { Link} from 'react-router-dom' 
 
 
  class HomeHeader extends React.Component{
@@ -36,26 +36,26 @@ import fecthDate from '../../fetch/fetch'
 			    </div>
 			  
 			    <nav className="bar  classify">
-	                <a className="tab-item external " >
+	                <Link className="tab-item external "  to="/classify/1">
 	                    <span className="icon iconfont icon-quanbu"></span>
 	                    <span className="tab-label">全部</span>
-	                </a>
-	                <a className="tab-item external" >
+	                </Link>
+	                <Link className="tab-item external"  to="/classify/2">
 	                    <span className="icon iconfont icon-muying"></span>
 	                    <span className="tab-label">母婴</span>
-	                </a>
-	                <a className="tab-item external" >
+	                </Link>
+	                <Link className="tab-item external"  to="/classify/2">
 	                    <span className="icon iconfont icon-jiaju"></span>
 	                    <span className="tab-label">家具</span>
-	                </a>
-	                <a className="tab-item external" >
+	                </Link>
+	                <Link className="tab-item external"  to="/classify/2">
 	                    <span className="icon iconfont icon-meizhuang"></span>
 	                    <span className="tab-label">美妆</span>
-	                </a>
-	                <a className="tab-item external" >
+	                </Link>
+	                <Link className="tab-item external"  to="/classify/2">
 	                    <span className="icon iconfont icon-tubiao"></span>
 	                    <span className="tab-label">食品</span>
-	                </a>
+	                </Link>
 	            </nav>
 			    <div className='activity'>
 			    

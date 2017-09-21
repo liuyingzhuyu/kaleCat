@@ -17,7 +17,7 @@ import Detail from './components/Detail'
 
 import Evaluate from './components/Evaluate'
 
-
+import Classify from './components/Classify'
 
 
 
@@ -34,6 +34,7 @@ const App = () => (
 		      <Route path="/my" component={My}/>
           <Route path="/detail/:id" component={Detail}/>
           <Route path="/evaluate/:id" component={Evaluate}/>
+           <Route path="/classify/:id" component={Classify}/>
     </div>
   </Router>
 )

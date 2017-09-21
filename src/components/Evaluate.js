@@ -1,8 +1,8 @@
 import React from 'react'
-import fecthDate from '../fetch/fetch'
+//import fecthDate from '../fetch/fetch'
 
-import { Card } from 'antd';
-import { Link} from 'react-router-dom' 
+//import { Card } from 'antd';
+//import { Link} from 'react-router-dom' 
 import { connect } from 'react-redux'
 
 
