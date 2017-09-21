@@ -1,0 +1,73 @@
+
+
+.public{
+    width: 100%;
+   
+    margin: 0 0 .5rem 0;
+    background: #fff;
+}
+
+$padding: 10px 10px 0 10px;
+.evaluate{
+    
+    @extend .public; 
+    height: 100%;
+   .ant-tabs-bar{
+       margin-bottom: 0;
+   } 
+    .pingjia{
+        width: 100%;
+        height:  5rem;
+//      background: pink;
+        padding: $padding;
+       .user{
+           width: 100%;
+           height: 2rem;
+           img{
+               width: 1.5rem;
+               height: 1.5rem;
+               border-radius: 50%;
+               vertical-align: middle;
+               margin-right: 5px;
+           }
+           
+        } 
+       .usercontent{
+           
+           color: #000; 
+       } 
+         .date{
+          color: #999; 
+           
+       }  
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

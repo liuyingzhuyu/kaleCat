@@ -18,9 +18,9 @@ import './static/iconfont/iconfont.js'
 
 // 引入编译完的 css
 import './App.css'
-import './styles/home.css'
-import './styles/datail.css'
-
+import './styles/home.scss'
+import './styles/datail.scss'
+import './styles/evaluate.scss'
 
 
 //结合reducer
@@ -29,6 +29,10 @@ const reducers =combineReducers(reducersObj)
 
 //创建store
 const store =createStore(reducers)
+
+
+
+
 
 
   

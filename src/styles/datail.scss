@@ -14,7 +14,7 @@ body{
 // height: 667px;
    overflow-y: auto;
  
-   background: pink; 
+   position: relative;
    background: #f5f5f5;
    
     .goods_pics_swiper{
@@ -67,6 +67,10 @@ body{
             margin:5px;
             vertical-align: middle;
         }
+    }
+    .tiaozhuan{
+        width: 100%;
+        display: block;
     }
     .praise{
        @extend .public; 
@@ -129,8 +133,34 @@ body{
         }  
     }
     
-    
-    
+    .purchase{
+        width: 100%;
+        padding: 0 10px;
+        position: fixed;
+        height: 2.5rem;
+        background: #fff;
+        border-top: 1px solid #e5e5e5;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+       }
+       .collection{
+           flex: 2;
+       }
+       .cart{
+           margin:0 10px 0 10px;
+           flex:4;
+           border:1px solid #DD137B;
+           color: #DD137B;
+       }
+       .buy{
+              flex:4;
+           background: #DD137B;
+            border:1px solid #DD137B;
+       }
     
     
     

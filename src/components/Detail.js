@@ -1,7 +1,7 @@
 import React from 'react'
-import { Icon } from 'antd';
+import { Icon,Button  } from 'antd';
 import fecthDate from '../fetch/fetch'
-
+import { Link} from 'react-router-dom' 
 import { connect } from 'react-redux'
 
 class DetailUI extends React.Component {
@@ -17,12 +17,14 @@ class DetailUI extends React.Component {
 		this.goods_pics_swiper = null
 	}
 	componentWillMount(){
+//		console.log(this, "componentWillMount")
+       console.log(this.props.goodsList, "props")
 		   var goodsList = this.props.goodsList
 		   var id = this.props.match.params.id
 			for(var i = 0; i < goodsList.length; i++) {
-			if(goodsList[i].goodsName == id) {
-				console.log(this, "MMMMMMMMMMMMMMMMMMM")
-				console.log(goodsList[i],"MMMMMMMMMMMMMMM")
+			if(goodsList[i]._id == id) {
+//				console.log(this, "MMMMMMMMMMMMMMMMMMM")
+//				console.log(goodsList[i],"MMMMMMMMMMMMMMM")
 				
 				this.setState({
 					goods: goodsList[i]
@@ -33,10 +35,10 @@ class DetailUI extends React.Component {
 		
 	}
 	render() {
-//		console.log(this, "MMMMMMMMMMMMMMMMMMM")
-//		console.log(this.props.match.params.id, "MMMMMMMMMMMMMMMMMMM")
-       const  {goods} = this.state
-		return(
+		console.log(this, "DDDDDDDDDDDDDD")
+		console.log(this.state.goods, "DDDDDDDDDDDDDD")
+     let  { goods } = this.state
+	return(
 			<div className="detail">
 			  
 		        <div className="swiper-container  goods_pics_swiper">
@@ -69,10 +71,16 @@ class DetailUI extends React.Component {
 			        <span className="rr"></span><span>正品保证</span>
 			        <span className="rr"></span><span>正品保证</span>
 			    </aside>
-			    <p className='praise'>
-			       <span >100%好评率</span>
-			       <span >查看全部评价<Icon type="right" /> </span>
-			    </p>
+			    <Link to={"/evaluate/"+ goods._id}  className="tiaozhuan">
+			         <p className='praise'>
+				      
+				       <span >100%好评率</span>
+				       <span >查看全部评价<Icon type="right" /> </span>
+				    </p>
+				    
+			    
+			    </Link>
+			  
 			    <div className="resource">
 			       <p>
 			           <img alt="" src= {goods.brand_logo}/>
@@ -98,7 +106,11 @@ class DetailUI extends React.Component {
 			
 			    </div>
 			
-			 
+			  <div className="purchase">
+			       <Icon className="collection" type="heart-o" style={{ fontSize: ".8rem" }}/>
+			      <Button className="cart" size="large">加入购物车</Button>
+			      <Button className="buy" size="large"  type="primary">立即购买</Button>
+			  </div>
 			</div>
 		)
 	}
@@ -122,7 +134,7 @@ class DetailUI extends React.Component {
 }
 
 const mapStateToProps = (state) => { //把state的值赋给props
-	console.log(state, "ooooooooooo")
+//	console.log(state, "ooooooooooo")
 	return {
 		goodsList: state.goodsList
 	}
@@ -209,3 +221,96 @@ export default Detail
 //			 
 //			</div>
 //		)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//动态化页面
+//return(
+//			<div className="detail">
+//			  
+//		        <div className="swiper-container  goods_pics_swiper">
+//			        <div className="swiper-wrapper"  >
+//			           
+//			            {
+//			            	goods.goodsPic.map((pic,index)=>{
+//			            		return (
+//			            			 <div className="swiper-slide" key={'p'+index}>
+//						               <img src={pic}  alt="请重新加载" />
+//						            </div>
+//			            		)
+//			            	})
+//			            }
+//			        </div>
+//			      
+//			        <div className="swiper-pagination"></div>
+//			    </div>
+//			    <div className='sale_condition'>
+//			         <span className="nowPrice"><b className="unit"> ￥</b>{goods.goodsPrice}</span>
+//			        原价:<span className="originPrice">{goods.goodsPrice +100}</span>
+//			      
+//			      <span className='sale_num'> 已售:{goods.goodsSale} 件</span>
+//			    </div>
+//			    <article>
+//			      {goods.goodsName}
+//			    </article>
+//			    <aside>
+//			        <span className="rr"></span><span>正品保证</span>
+//			        <span className="rr"></span><span>正品保证</span>
+//			        <span className="rr"></span><span>正品保证</span>
+//			    </aside>
+//			    <link to="/evaluate/1"  className="tiaozhuan">
+//			         <p className='praise'>
+//				      
+//				       <span >100%好评率</span>
+//				       <span >查看全部评价<Icon type="right" /> </span>
+//				    </p>
+//				    
+//			    
+//			    </link>
+//			  
+//			    <div className="resource">
+//			       <p>
+//			           <img alt="" src= {goods.brand_logo}/>
+//				       <span className="shop_title"> {goods.brand_name}</span>
+//				       <span className="Special"> 进入专场<Icon type="right" /> </span>
+//			       </p>
+//			       <p className="descri"> {goods.brand_desc}</p>
+//			   
+//			    </div>
+//			    <div className='productDetails'>
+//			       <h3>产品详情</h3>
+//			       <p className="tip">{goods.tip}   </p>
+//			       {
+//			       	  goods.detail.map((item,index)=>{
+//			       	  	return(
+//			       	  		<p key={"adfasf"+index}>
+//						        <img alt="" src={item} />
+//						    </p>
+//			       	  	)
+//			       	  })	
+//			       }
+//			       
+//			
+//			    </div>
+//			
+//			 
+//			</div>
+//		)
+
+
+
+
+

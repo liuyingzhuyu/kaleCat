@@ -108,7 +108,8 @@ import fecthDate from '../../fetch/fetch'
 //		  console.log(this.headerSwiper)
 		  var that=this
 		  //获取轮播图
-		 fecthDate('api/swiper',function(data){
+//		 fecthDate('api/swiper',function(data){
+	     fecthDate('/0914project/kaleCat/src/static/json/homeSwiper.json',function(data){
 //		 	console.log(data,"888888888888888888888888")
 		  	that.setState({
 					swiperList:data

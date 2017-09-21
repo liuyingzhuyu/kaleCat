@@ -15,7 +15,7 @@ import My from './components/My'
 
 import Detail from './components/Detail'
 
-
+import Evaluate from './components/Evaluate'
 
 
 
@@ -24,7 +24,7 @@ import Detail from './components/Detail'
 
 
 //配置路由及二级路由
-const BasicExample = () => (
+const App = () => (
   <Router>
     <div>
           <Route exact path="/" component={Home}/>
@@ -33,8 +33,8 @@ const BasicExample = () => (
 		      <Route path="/cart" component={Cart}/>
 		      <Route path="/my" component={My}/>
           <Route path="/detail/:id" component={Detail}/>
-         
+          <Route path="/evaluate/:id" component={Evaluate}/>
     </div>
   </Router>
 )
-export default BasicExample
+export default App

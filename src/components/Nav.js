@@ -15,7 +15,7 @@ class NavUI extends React.Component{
 	  }
     render(){
     	return(
-    			 <nav className="bar bar-tab">
+    			 <nav className="bar bar-tab" id="bar">
 						    <Link className={"tab-item external "+this.changeColor('/')}  to="/">
 						        <span className="icon iconfont icon-shouye"></span>
 						        <span className="tab-label">外卖</span>
